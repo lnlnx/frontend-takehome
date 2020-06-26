@@ -4,7 +4,7 @@ const PostCard = (props) => {
     return (
         <div className={classes.postCard}>
             <div className={classes.cardVote}>
-                <p>Upvotes: {props.upvotes}</p>
+                <p>Ups: {props.upvotes}</p>
             </div>
             <div className={classes.cardContent}>
                 <h4>{props.subReddit}</h4>
