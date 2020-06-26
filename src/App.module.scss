@@ -1,0 +1,71 @@
+.row {
+    padding: 0 5%;
+}
+
+.row:after {
+    // content: "";
+    display: table;
+    clear: both;
+    // display: felx;
+    // background-color: #dae0e6;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+}
+.redditListWrap{
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    .redditList { 
+        border: 1px solid #cbcfd3;
+        background-color: white;
+        border-radius: 4px;
+        .reddit {
+            margin: 0 0 5px 20px;
+        }
+        .redditHeaderWrapper {
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+        .redditListHeader {
+            margin: 0 0 0 20px; 
+        }
+        
+    }
+}
+
+
+.postList {
+    float: left;
+    width: 75%;
+    box-sizing: border-box;
+    // display: inline-block; 
+    // flex: 1;
+    // margin: 20px 20px 0 0;
+    .postCard {
+        padding: 0 0 0 20px;
+        margin-bottom: 20px;
+        border: 1px solid #cbcfd3;
+        background-color: white;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .cardVote {
+            flex: 0 0 10%;
+            margin-top: 0;
+
+
+        }
+        .cardContent {
+            flex: 0 0 80%
+
+        }
+    
+    }
+    
+}
+
+
+
