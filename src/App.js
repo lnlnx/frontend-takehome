@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/post';
 import RedditList from './components/RedditList/RedditList';
+import RedditDropdown from './components/RedditList/RedditDropdown';
 import PostList from './components/PostList/PostList';
 import classes from './App.module.scss';
 import Spinner from './UI/Spinner';
+
 class App extends Component {
   componentDidMount () {
     this.props.onLoad()
@@ -14,6 +16,7 @@ class App extends Component {
     const appBody = <p>Failed loading reddit!</p> 
     const content = this.props.loading ? <Spinner/> : 
       <div className={classes.row}> 
+        <RedditDropdown />
         <PostList />
         <RedditList />
       </div>

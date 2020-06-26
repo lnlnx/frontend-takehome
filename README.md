@@ -1,3 +1,24 @@
+## Running the project
+
+```bash
+# make sure all dependencies are installed
+yarn install
+yarn start
+```
+
+## Project highlight
+
+The project supports filtering on subreddit and posts under subreddit are sorted by upvote numbers. The filtering functionality implements responsive design and is mobile friendly.
+
+## Project dependencies:
+
+- React
+- Redux
+- Redux-saga
+- css module
+- scss (for grouping css)
+
+----
 # Say Frontend Take Home Project
 
 This repository contains the instructions for the frontend (web) takehome coding challenge.

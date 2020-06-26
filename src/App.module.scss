@@ -1,5 +1,9 @@
 .row {
-    padding: 0 5%;
+    padding: 0 50px;
+    @media (max-width: 576px) {
+        padding: 0 20px;
+    }
+
 }
 
 .row:after {
@@ -10,7 +14,6 @@
 .redditListWrap{
     float: left;
     width: 20%;
-    // padding-left: 20px;
     box-sizing: border-box;
     .redditList { 
         border: 1px solid #cbcfd3;
@@ -22,6 +25,10 @@
                 font-weight: bold;
             }
         }
+        .reddit:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
         .redditHeaderWrapper {
             display: flex;
             align-items: center;
@@ -32,7 +39,11 @@
         }
         
     }
+    @media (max-width: 576px) {
+        display: none;
+    }
 }
+
 
 .postList {
     float: left;
@@ -49,12 +60,11 @@
         flex-direction: row;
         flex-wrap: wrap;
         .cardVote {
-            width: 80px;
-            // flex: 0 0 10%;
-            margin-top: 0;
+            flex: 0 0 15%
         }
         .cardContent {
-            flex: 0 0 80%
+            flex: 0 0 80%;
+            padding: 0 0 10px 5px;
         }
 
         h4 {
@@ -67,7 +77,22 @@
         }
     
     }
+    @media (max-width: 576px) {
+        width: 100%;
+        padding-right: 0;
+    }
     
 }
 
+.redditDropdown {
+    display: none;
+    color: black;
+    padding: 16px 0 16px 0;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 
+    @media (max-width: 576px) {
+        display: block;
+    }
+}
