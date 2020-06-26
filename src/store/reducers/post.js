@@ -12,14 +12,19 @@ const postReducer = (state = initialState, action) => {
         case actionTypes.FETCH_REDDITS:
             return { ...state };
         case actionTypes.FETCH_REDDITS_START:
-            return { ...state };
+            return { ...state, loading: true };
         case actionTypes.FETCH_REDDITS_SUCCESS:
             return { 
                 ...state,
-                subreddits: action.posts
+                subreddits: action.posts,
+                loading: false
              };
         case actionTypes.FETCH_REDDITS_FAIL:
-            return { ...state };
+            return {
+                 ...state,
+                loading: false,
+                error: action.error
+             };
         case actionTypes.SET_FILTER:
             return { 
                 ...state,

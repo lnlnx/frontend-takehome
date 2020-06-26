@@ -4,18 +4,28 @@ import * as actions from './store/actions/post';
 import RedditList from './components/RedditList/RedditList';
 import PostList from './components/PostList/PostList';
 import classes from './App.module.scss';
+import Spinner from './UI/Spinner';
 class App extends Component {
   componentDidMount () {
     this.props.onLoad()
   }
-
+  
   render() {
-    return (
+    const appBody = <p>Failed loading reddit!</p> 
+    const content = this.props.loading ? <Spinner/> : 
       <div className={classes.row}> 
-         <PostList />
-         <RedditList />
+        <PostList />
+        <RedditList />
       </div>
-    );
+
+    return ((this.props.error && appBody) || content);
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    loading: state.loading,
+    error: state.error
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -25,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
